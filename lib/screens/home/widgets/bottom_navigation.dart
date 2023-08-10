@@ -5,7 +5,7 @@ class MoneyManagerBottomNavigation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(items: [
+    return BottomNavigationBar(items: const [
       BottomNavigationBarItem(
         icon: Icon(Icons.home),
         label: 'Transactions',
