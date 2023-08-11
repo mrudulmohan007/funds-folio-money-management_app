@@ -5,10 +5,6 @@ class ScreenCategory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Text('ScreenCategory'),
-      ),
-    );
+    return Center(child: Text('ScreenCategory'));
   }
 }

@@ -22,7 +22,6 @@ environment:
   sdk: ">=2.19.6 <3.0.0"
 
 dependencies:
-  awesome_notifications: 0.6.21
   cupertino_icons: 1.0.2
   flutter:
     sdk: flutter
@@ -31,7 +30,6 @@ dependencies:
   hive: 2.0.6
   hive_flutter: 1.1.0
   intl: 0.17.0
-  share_plus: 4.0.2
   shared_preferences: 2.0.13
   store_redirect: 2.0.1
   syncfusion_flutter_charts: 19.4.54
