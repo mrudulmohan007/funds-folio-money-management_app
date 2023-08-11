@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart ';
+import 'package:funds_folio_money_management_app/screens/category/expense_category_list.dart';
+import 'package:funds_folio_money_management_app/screens/category/income_category_list.dart';
 
 class ScreenCategory extends StatefulWidget {
   const ScreenCategory({super.key});
@@ -24,12 +26,21 @@ class _ScreenCategoryState extends State<ScreenCategory>
           labelColor: Colors.black,
           unselectedLabelColor: Colors.grey,
           controller: _tabController,
-          tabs: [
+          tabs: const [
             Tab(text: 'INCOME'),
             Tab(
               text: 'EXPENSE',
             ),
           ],
+        ),
+        Expanded(
+          child: TabBarView(
+            controller: _tabController,
+            children: const [
+              IncomeCategoryList(),
+              ExpenseCategoryList(),
+            ],
+          ),
         )
       ],
     );
