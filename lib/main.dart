@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:funds_folio_money_management_app/models/category/category_model.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:funds_folio_money_management_app/screens/home/screen_home.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+  if (!Hive.isAdapterRegistered(CategoryTypeAdapter().typeId)) {
+    Hive.registerAdapter(CategoryTypeAdapter());
+  }
+  if (!Hive.isAdapterRegistered(CategoryTypeAdapter().typeId)) {
+    Hive.registerAdapter(CategoryTypeAdapter());
+  }
   runApp(const MyApp());
 }
 
