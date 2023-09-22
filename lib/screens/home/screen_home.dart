@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart ';
+import 'package:funds_folio_money_management_app/screens/category/category_add_popup.dart';
 import 'package:funds_folio_money_management_app/screens/category/screen_category.dart';
 import 'package:funds_folio_money_management_app/screens/home/widgets/bottom_navigation.dart';
 import 'package:funds_folio_money_management_app/screens/transactions/screen_transaction.dart';
@@ -29,7 +30,14 @@ class ScreenHome extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          if (selectedIndexNotifier.value == 0) {
+            print('Add Transaction');
+          } else {
+            print('Add Category');
+            ShowCategoryAddPopup(context);
+          }
+        },
         child: Icon(Icons.add),
       ),
     );
