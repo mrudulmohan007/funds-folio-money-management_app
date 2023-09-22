@@ -9,8 +9,8 @@ Future<void> main() async {
   if (!Hive.isAdapterRegistered(CategoryTypeAdapter().typeId)) {
     Hive.registerAdapter(CategoryTypeAdapter());
   }
-  if (!Hive.isAdapterRegistered(CategoryTypeAdapter().typeId)) {
-    Hive.registerAdapter(CategoryTypeAdapter());
+  if (!Hive.isAdapterRegistered(CategoryModelAdapter().typeId)) {
+    Hive.registerAdapter(CategoryModelAdapter());
   }
   runApp(const MyApp());
 }

@@ -25,7 +25,7 @@ Future<void> ShowCategoryAddPopup(BuildContext context) async {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8),
+              padding: const EdgeInsets.all(8.0),
               child: Row(
                 children: [
                   RadioButton(title: 'Income', type: CategoryType.income),
@@ -47,7 +47,7 @@ Future<void> ShowCategoryAddPopup(BuildContext context) async {
                     name: _name,
                     type: _type,
                   );
-                  CategoryDB().insertCategory(_category);
+                  CategoryDB.instance.insertCategory(_category);
                   Navigator.pop(ctx);
                 },
                 child: Text('Add'),
