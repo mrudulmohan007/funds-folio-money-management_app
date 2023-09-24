@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart ';
+import 'package:funds_folio_money_management_app/screens/add_transaction/screen_add_transaction.dart';
 import 'package:funds_folio_money_management_app/screens/category/category_add_popup.dart';
 import 'package:funds_folio_money_management_app/screens/category/screen_category.dart';
 import 'package:funds_folio_money_management_app/screens/home/widgets/bottom_navigation.dart';
@@ -33,6 +34,7 @@ class ScreenHome extends StatelessWidget {
         onPressed: () {
           if (selectedIndexNotifier.value == 0) {
             print('Add Transaction');
+            Navigator.of(context).pushNamed(ScreenaddTransaction.routeName);
           } else {
             print('Add Category');
             ShowCategoryAddPopup(context);
