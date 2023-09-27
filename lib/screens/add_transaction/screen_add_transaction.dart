@@ -30,6 +30,7 @@ class _ScreenaddTransactionState extends State<ScreenaddTransaction> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: SafeArea(
           child: Padding(
         padding: EdgeInsets.all(20.0),
@@ -146,8 +147,8 @@ class _ScreenaddTransactionState extends State<ScreenaddTransaction> {
             ElevatedButton.icon(
               onPressed: () {
                 addTransaction();
-
-                Navigator.pop(context);
+                // this pop works only here
+                Navigator.of(context).pop();
               },
               icon: Icon(Icons.check),
               label: Text('Submit'),
@@ -159,9 +160,9 @@ class _ScreenaddTransactionState extends State<ScreenaddTransaction> {
   }
 
   Future<void> addTransaction() async {
-    final _purposeText = _purposeEditingTextController.text.trim();
+    var _purposeText = _purposeEditingTextController.text.trim();
     final _amountText = _amountEditingTextController.text.trim();
-    if (_purposeText.isNotEmpty) {
+    if (_purposeText.isEmpty) {
       return;
     }
     if (_amountText.isEmpty) {
@@ -181,12 +182,14 @@ class _ScreenaddTransactionState extends State<ScreenaddTransaction> {
     }
 
     final _model = TransactionModel(
-        purpose: _purposeText,
-        amount: _parsedAmount,
-        date: _selectedDate!,
-        type: _selectedCategorytype!,
-        category: _selectedCategoryModel!);
+      purpose: _purposeText,
+      amount: _parsedAmount,
+      date: _selectedDate!,
+      type: _selectedCategorytype!,
+      category: _selectedCategoryModel!,
+    );
 
-    await TransactionDB.instance.addTransaction(_model);
+    TransactionDB.instance.addTransaction(_model);
+    TransactionDB.instance.refresh();
   }
 }

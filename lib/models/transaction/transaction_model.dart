@@ -1,3 +1,4 @@
+import 'package:funds_folio_money_management_app/db/category/category_db.dart';
 import 'package:funds_folio_money_management_app/models/category/category_model.dart';
 import 'package:hive/hive.dart';
 part 'transaction_model.g.dart';

@@ -5,6 +5,9 @@ import 'package:funds_folio_money_management_app/screens/add_transaction/screen_
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:funds_folio_money_management_app/screens/home/screen_home.dart';
 
+import 'db/category/category_db.dart';
+import 'db/transactions/transaction_db.dart';
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
@@ -17,6 +20,8 @@ Future<void> main() async {
   if (!Hive.isAdapterRegistered(TransactionModelAdapter().typeId)) {
     Hive.registerAdapter(TransactionModelAdapter());
   }
+  await Hive.openBox<TransactionModel>(TRANSACTION_DB_NAME);
+  await Hive.openBox<CategoryModel>(categoryModelDb);
   runApp(const MyApp());
 }
 
@@ -30,7 +35,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
       ),
       home: const ScreenHome(),
       routes: {

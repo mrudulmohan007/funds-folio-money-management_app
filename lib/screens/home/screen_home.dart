@@ -16,9 +16,13 @@ class ScreenHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 111, 218, 166),
       appBar: AppBar(
-        title: Text('MONEY MANAGER'),
-        backgroundColor: Colors.blue[300],
+        title: const Text(
+          'MONEY MANAGER',
+          style: TextStyle(color: Colors.black),
+        ),
+        backgroundColor: Color.fromARGB(255, 206, 234, 196),
         centerTitle: true,
       ),
       bottomNavigationBar: const MoneyManagerBottomNavigation(),
