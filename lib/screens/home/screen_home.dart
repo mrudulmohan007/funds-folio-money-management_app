@@ -19,7 +19,7 @@ class ScreenHome extends StatelessWidget {
       backgroundColor: const Color.fromARGB(255, 111, 218, 166),
       appBar: AppBar(
         title: const Text(
-          'MONEY MANAGER',
+          'FUNDSFOLIO',
           style: TextStyle(color: Colors.black),
         ),
         backgroundColor: Color.fromARGB(255, 206, 234, 196),
