@@ -1,6 +1,6 @@
 # funds_folio_money_management_app
 
-A new Flutter project.
+Expense and Income Tracker mobile app made using the Flutter framework and Hive
 
 ## Getting Started
 
